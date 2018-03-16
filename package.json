@@ -1,0 +1,21 @@
+{
+  "name": "unplash.xmalboeuf",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html -p 8042"
+  },
+  "keywords": [],
+  "author": "Phillip Malboeuf <phil@boeuf.coffee>",
+  "license": "",
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "typescript": "^2.8.0-rc"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
