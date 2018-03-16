@@ -10,12 +10,12 @@ interface Message {
 
 interface Props {}
 interface State {
-  messages: Array<Message>,
+  messages: Message[]
 }
 
 export default class Messages extends React.Component<Props, State> {
 
-  private socket : WebSocket; 
+  private socket : WebSocket
 
   constructor(props: {}) {
     super(props)
