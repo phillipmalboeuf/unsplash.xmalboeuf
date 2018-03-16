@@ -1,0 +1,15 @@
+
+
+// #HEROES
+
+.hero {
+  @extend .grid;
+  @extend .grid--middle;
+  @extend .grid--center;
+
+  min-height: 100vh;
+}
+
+  .hero__content {
+    @extend .padded;
+  }

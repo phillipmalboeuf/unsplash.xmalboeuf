@@ -1,0 +1,33 @@
+// #IMAGES
+
+img {
+  display: block;
+  max-width: 100%;
+
+  .full_images &,
+  &.img--full {
+    width: 100%;
+  } 
+
+  &.img--clickable {
+    cursor: pointer;
+    position: relative;
+
+    // border: 1px solid $black;
+
+    &:active {
+      top: 1px;
+    }
+
+    transition: transform $fast;
+
+    a:hover &,
+    a:focus & {
+      transform: translateY(-5px);
+    }
+  }
+
+  &.img--small {
+    width: $vertical_rythm*6;
+  }
+}
