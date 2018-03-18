@@ -85,36 +85,6 @@ footer {
   }
 }
 
-.absolute_container { 
-  position: relative;
-}
-.absolute {
-  position: absolute;
-
-  &.absolute--behind {
-    z-index: -1;
-
-    @media #{$phone} {
-      display: none;
-    }
-  }
-
-  &.absolute--top_right {
-    top: -10%;
-    right: -10%;
-  }
-
-  &.absolute--top_left {
-    top: -10%;
-    left: -10%;
-  }
-
-  &.absolute--bottom_right {
-    bottom: -10%;
-    right: -10%;
-  }
-}
-
 .padded {
   padding: $vertical_rythm*2;
 
