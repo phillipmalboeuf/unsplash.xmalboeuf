@@ -11,6 +11,7 @@ export const Demo: React.SFC<Props> = (props) => {
     <div className="hero__content">
       <Link className="underline" to="/">Back to welcome page</Link>
       <h1 className="h1--massive">Unsplash <span className="thin">Embed</span></h1>
+      <div className="padded padded--tight light_grey_back normal_bottom">📣 This demo is not intended to be a real product. I understand that there's plenty of things missing.</div>
       <EmbedBuilder />
     </div>
     <div className="hero__topright">
