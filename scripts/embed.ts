@@ -12,7 +12,7 @@ class Embed {
       .then(response => response.json())
       .then(json => {
         console.log(json)
-        settings.target.parentElement.setAttribute("style", "position:relative;border:1px solid #ddd;border-radius:4px;boxShadow:0 8px 16px rgba(0,0,0,.15)")
+        settings.target.parentElement.setAttribute("style", "position:relative;border:1px solid #f1f1f1;border-radius:4px;box-shadow:0 2px 4px #f1f1f1;overflow:hidden")
         settings.target.insertAdjacentHTML("afterend", `
           <div style="padding:20px;">
             <div style="display:flex;">
