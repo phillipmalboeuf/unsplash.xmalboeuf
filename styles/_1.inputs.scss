@@ -11,7 +11,7 @@ label,
 
   color: inherit;
   font-size: $small_size;
-  font-weight: $bold_weight;
+  font-weight: $normal_weight;
   letter-spacing: $letter_spacing;
 
   margin-bottom: $vertical_rythm/6;
@@ -59,12 +59,11 @@ textarea,
   background: $white;
   padding: $vertical_rythm/2;
   margin-bottom: $vertical_rythm/2;
-  border: 1px solid $grey--dark;
+  border: 1px solid $grey;
   border-radius: $border_radius;
-  // max-width: $max_width/3;
 
   &:active {
-    top: 1px
+    // top: 1px
   }
 
   &:disabled,
@@ -77,11 +76,12 @@ textarea,
   }
 
   &:focus {
-    background: fade-out($grey, 0.2);
+    color: $black--dark;
+    border-color: $grey--dark;
   }
 
   &.input--tight {
-    padding: $vertical_rythm/4 $vertical_rythm/2;
+    padding: $vertical_rythm/4 $vertical_rythm/3;
   }
 
   &.input--transparent {
@@ -141,11 +141,11 @@ input[type="radio"] {
 
     position: relative;
     font-size: inherit;
-    color: fade-out($grey--dark, 0.42);
+    color: $grey;
 
     &:hover,
     input:focus + & {
-      color: $black;
+      color: $grey--dark;
     }
 
     &:before,
@@ -169,7 +169,7 @@ input[type="radio"] {
       
       position: absolute;
       left: 0;
-      font-weight: bold;
+      color: $white;
       width: $checkbox_size;
       text-align: center;
     }
@@ -181,11 +181,11 @@ input[type="radio"] {
       color: $black;
 
       &:before {
-        // border-color: $black;
+        background-color: $black;
       }
 
       &:after {
-        content: "✔︎";
+        content: "✔";
       }
     }
   }

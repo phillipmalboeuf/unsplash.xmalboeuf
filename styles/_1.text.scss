@@ -2,7 +2,7 @@
 // #BODY
 
 html {
-  font: #{$base_size}/#{$vertical_rythm * 0.75} $body_font;
+  font: #{$base_size}/#{$vertical_rythm * 0.88} $body_font;
   font-weight: $normal_weight;
 
   @media #{$tablet_portrait} {
@@ -26,7 +26,7 @@ body {
 }
 
 ::selection {
-  background: $white;
+  background: $grey;
 }
 
 
@@ -66,13 +66,9 @@ body {
     font-size: $big_size;
     line-height: $vertical_rythm*2;
 
-    @media #{$tablet_portrait} {
-      font-size: $big_size*0.8;
-      line-height: $vertical_rythm*1.33;
-    }
-
     &.h1--massive {
       font-size: $massive_size;
+      line-height: $vertical_rythm*3;
     }
 
     &.h1--medium {
@@ -142,7 +138,7 @@ a {
   }
 
   &:active {
-    top: 1px;
+    // top: 1px;
   }
 
   &.a--anchor {
@@ -265,6 +261,7 @@ sub {
 
 .black { color: $black; }
 .white { color: $white; }
+.grey { color: $grey--dark; }
 .green { color: $green; }
 .red { color: $red; }
 .blue { color: $blue; }
