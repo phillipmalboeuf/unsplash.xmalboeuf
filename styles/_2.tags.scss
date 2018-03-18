@@ -9,14 +9,13 @@
   .pill,
   .tag {
     display: inline-block;
-    color: $black--dark;
-    // font-weight: $bold_weight;
+    color: $black;
 
     padding: $vertical_rythm/6 $vertical_rythm/3;
-    background-color: $grey;
+    background-color: $grey--light;
     border-radius: $border_radius;
 
-    margin: 0 $vertical_rythm/2 $vertical_rythm/2 0;
+    margin: $vertical_rythm/10 $vertical_rythm/6 $vertical_rythm/10 0;
 
     label {
       margin-bottom: 0;

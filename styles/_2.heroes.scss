@@ -12,4 +12,12 @@
 
   .hero__content {
     @extend .padded;
+    @extend .max_width;
+    @extend .max_width--center;
+  }
+
+  .hero__topright {
+    position: absolute;
+    top: $vertical_rythm;
+    right: $vertical_rythm;
   }
