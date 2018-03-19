@@ -26,10 +26,13 @@ export const Demo: React.SFC<Props> = (props) => {
           <ol>
             <li>Preact instead of React for the Embed's render</li>
             <li>Use a non-rate-limited API call</li>
+            <li>Finish the "like" button functionality</li>
             <li>Provide photo sizes parameters</li>
+            <li>Add a loading state</li>
           </ol>
         </div>
       </div>
+      <p><small>The <a href="https://github.com/phillipmalboeuf/unsplash.xmalboeuf" className="underline" target="_blank">source files are available</a>. Let me know what you think of it.</small></p>
       <div className="padded padded--tight light_grey_back normal_bottom">📣 This demo is not intended to be a real, finished, or necessary product.</div>
       <EmbedBuilder />
     </div>
