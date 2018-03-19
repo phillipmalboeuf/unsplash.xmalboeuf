@@ -47,7 +47,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
         <TextField name="photo_id" label="Enter the id or the url of an Unplash photo"
           value={this.state.photo_id}
           placeholder={`https://unsplash.com/photos/${this.state.photo_id}`}
-          onChange={(e)=> this.setState({photo_id: e.currentTarget.value})} />
+          onChange={(e)=> this.setState({photo_id: e.currentTarget.value.replace("https://unsplash.com/photos/", "")})} />
       </div>
       <div className="col col--9of12">
         <div><img ref={(element)=> this.photo = element} src={`https://source.unsplash.com/${this.state.photo_id}`} /></div>
