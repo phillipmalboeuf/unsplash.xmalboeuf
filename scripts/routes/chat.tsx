@@ -16,7 +16,7 @@ export const Chat: React.SFC<Props> = (props) => {
     </div>
     <div className="hero__topright">
       <a href="mailto:phil@boeuf.coffee" className="underline" target="_blank">phil@boeuf.coffee</a><br/>
-      <a href="https://crewlabs.slack.com/messages/D6VL66T8E" className="underline" target="_blank">crewlabs.slack.com/phillipmalboeuf</a>
+      <a href="slack://user?team=T02TA4LAR&id=U6UTCTDT7" className="underline">crewlabs.slack.com/phillipmalboeuf</a>
     </div>
   </div>
 }
