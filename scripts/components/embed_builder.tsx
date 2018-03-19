@@ -4,14 +4,12 @@ import * as React from "react"
 import { Checkbox } from "./checkbox"
 import { TextField } from "./textfield"
 
-
 interface Props {}
 interface State {
   photo_id: string,
   show_exif: boolean,
   show_description: boolean,
   show_location: boolean,
-  show_stats: boolean,
   show_like_button: boolean,
   show_download_button: boolean
 }
@@ -24,34 +22,19 @@ export default class EmbedBuilder extends React.Component<Props, State> {
     this.state = { 
       photo_id: "AqY6268yL3o",
       show_exif: true,
-      show_description: false,
+      show_description: true,
       show_location: true,
-      show_stats: true,
       show_like_button: true,
       show_download_button: true
     }
   }
 
   componentDidMount() {
-    Embed.render({
-      target: this.photo,
-      photo_id: this.state.photo_id,
-      show_description: this.state.show_description,
-      show_location: this.state.show_location,
-      show_like_button: this.state.show_like_button,
-      show_download_button: this.state.show_download_button
-    })
+
   }
 
   componentDidUpdate() {
-    Embed.render({
-      target: this.photo,
-      photo_id: this.state.photo_id,
-      show_description: this.state.show_description,
-      show_location: this.state.show_location,
-      show_like_button: this.state.show_like_button,
-      show_download_button: this.state.show_download_button
-    })
+
   }
 
   componentWillUnmount() {
@@ -80,9 +63,6 @@ export default class EmbedBuilder extends React.Component<Props, State> {
 
         <Checkbox name="show_exif" label="EXIF" checked={this.state.show_exif}
           onChange={(e)=> this.setState({show_exif: !this.state.show_exif})} />
-
-        <Checkbox name="show_stats" label="Stats" checked={this.state.show_stats}
-          onChange={(e)=> this.setState({show_stats: !this.state.show_stats})} />
 
         <hr/>
 
