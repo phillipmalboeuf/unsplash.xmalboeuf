@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel index.html -p 8042"
+    "start": "parcel index.html -p 8888"
   },
   "keywords": [],
   "author": "Phillip Malboeuf <phil@boeuf.coffee>",
