@@ -17,11 +17,12 @@ interface State {
 }
 
 export default class EmbedBuilder extends React.Component<Props, State> {
+  private photo : HTMLImageElement
 
   constructor(props: Props){
     super(props)
     this.state = { 
-      photo_id: "nEWGCi7gB8U",
+      photo_id: "AqY6268yL3o",
       show_exif: true,
       show_description: false,
       show_location: true,
@@ -32,6 +33,25 @@ export default class EmbedBuilder extends React.Component<Props, State> {
   }
 
   componentDidMount() {
+    Embed.render({
+      target: this.photo,
+      photo_id: this.state.photo_id,
+      show_description: this.state.show_description,
+      show_location: this.state.show_location,
+      show_like_button: this.state.show_like_button,
+      show_download_button: this.state.show_download_button
+    })
+  }
+
+  componentDidUpdate() {
+    Embed.render({
+      target: this.photo,
+      photo_id: this.state.photo_id,
+      show_description: this.state.show_description,
+      show_location: this.state.show_location,
+      show_like_button: this.state.show_like_button,
+      show_download_button: this.state.show_download_button
+    })
   }
 
   componentWillUnmount() {
@@ -47,7 +67,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
           onChange={(e)=> this.setState({photo_id: e.currentTarget.value})} />
       </div>
       <div className="col col--9of12">
-        <div><img onLoad={(e)=> new Embed({target: e.currentTarget, photo_id: this.state.photo_id})} src={`https://source.unsplash.com/${this.state.photo_id}/800x`} /></div>
+        <div><img ref={(element)=> this.photo = element} src={`https://source.unsplash.com/${this.state.photo_id}`} /></div>
       </div>
       <div className="col col--3of12">
         <h6>Content</h6>
@@ -76,7 +96,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
       </div>
       <div className="col col--10of12">
         <label htmlFor="script">Copy and paste this script anywhere on your site:</label>
-        <textarea id="script" readOnly></textarea>
+        <textarea rows={2} id="script" readOnly value={`<script>if(!window.Embed){var s=document.createElement('script');s.setAttribute("src", "https://unsplashxmalboeuf.com/embed.js");document.body.appendChild(s)}</script><img onload="new Embed({target: e.currentTarget, photo_id: "${this.state.photo_id}"})" src="https://source.unsplash.com/${this.state.photo_id}"} />`} />
       </div>
     </div>
   }
