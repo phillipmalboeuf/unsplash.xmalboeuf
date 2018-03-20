@@ -58,7 +58,6 @@ export default class Messages extends React.Component<Props, State> {
   }
 
   private scrollToBottom() : void {
-    console.log(this.element.clientHeight)
     this.element.scrollTop = this.element.scrollHeight
   }
 
