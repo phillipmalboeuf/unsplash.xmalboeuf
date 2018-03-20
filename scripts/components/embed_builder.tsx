@@ -28,19 +28,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
       show_download_button: true
     }
   }
-
-  componentDidMount() {
-
-  }
-
-  componentDidUpdate() {
-
-  }
-
-  componentWillUnmount() {
-
-  }
-
+  
   public render() {
     return <div className="grid grid--guttered">
       <div className="col col--12of12">
@@ -76,7 +64,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
       </div>
       <div className="col col--10of12">
         <label htmlFor="script">Copy and paste this script anywhere on your site:</label>
-        <textarea rows={2} id="script" readOnly value={`<script>if(!window.Embed){var s=document.createElement('script');s.setAttribute("src", "https://unsplashxmalboeuf.com/embed.js");document.body.appendChild(s)}</script><img onload="new Embed({target: e.currentTarget, photo_id: "${this.state.photo_id}"})" src="https://source.unsplash.com/${this.state.photo_id}"} />`} />
+        <textarea className="grey" onFocus={(e)=> e.currentTarget.select()} rows={3} id="script" readOnly value={`<script>if(!window.Embed){var s=document.createElement('script');s.setAttribute("src", "https://unsplashxmalboeuf.com/embed.js");document.body.appendChild(s)}</script><img onload="new Embed({target: e.currentTarget, photo_id: "${this.state.photo_id}"})" src="https://source.unsplash.com/${this.state.photo_id}"} />`} />
       </div>
     </div>
   }
