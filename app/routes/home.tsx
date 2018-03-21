@@ -9,7 +9,7 @@ export const Home: React.SFC<Props> = (props) => {
   return <div className="hero black_back" style={{backgroundImage: "url(https://montrealuploads.imgix.net/unsplash.gif?auto=format,compress&frame=all)"}}>
     <div className="hero__content white">
       <h1>Unsplash <span className="thin">X Phillip Malboeuf</span></h1>
-      <p>Hi Unsplash 🙀!<br/>I've set out to show how I'm your next full-stack developer. Your quest stops here!</p>
+      <p>Hi Unsplash 🙀!<br/>I've set out to attempt to become your next full-stack developer. Your quest for a new dev stops here!</p>
 
       <div className="grid grid--guttered">
         <div className="col col--6of12">
