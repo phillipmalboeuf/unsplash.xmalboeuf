@@ -20,7 +20,7 @@ export const Home: React.SFC<Props> = (props) => {
           <p>Other techs<br/>{["Dokku", "MongoDB", "Imgix", "Algolia", "Stripe", "Shopify"].map((tag, index)=> <Tag key={index} label={tag} />)}</p>
         </div>
         <div className="col col--6of12">
-          <p>And second, I've made this thing over the weekend, a small extension to your <a href="https://source.unsplash.com" className="underline" target="_blank">source.unsplash.com</a>:</p>
+          <p>And second, I've made this thing this week, a small extension to your <a href="https://source.unsplash.com" className="underline" target="_blank">source.unsplash.com</a>:</p>
           <p><Button to="/demo" label="See Demo" /></p>
           <p><small>The <a href="https://github.com/phillipmalboeuf/unsplash.xmalboeuf" className="underline" target="_blank">source files are available</a>. Let me know what you think of it.</small></p>
         </div>
