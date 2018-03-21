@@ -38,7 +38,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
           onChange={(e)=> this.setState({photo_id: e.currentTarget.value.replace("https://unsplash.com/photos/", "")})} />
       </div>
       <div className="col col--9of12">
-        <Embed {...this.state} />
+        {/*<Embed {...this.state} />*/}
       </div>
       <div className="col col--3of12">
         <h6>Content</h6>
