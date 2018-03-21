@@ -4,19 +4,30 @@
 .messages {
   list-style: none;
   padding: 0;
-  max-height: 66vh;
+  max-height: 50vh;
   overflow: scroll;
 }
 
   .message {
     display: block;
-    margin: $vertical_rythm/8 auto $vertical_rythm/8 0;
+    margin: $vertical_rythm/8 0 $vertical_rythm/8 0;
+
+    &.message--current {
+      text-align: right;
+    }
   }
 
     .message__content {
       display: inline-block;
+      max-width: 88%;
       color: $black;
+      text-align: left;
       padding: $vertical_rythm/6 $vertical_rythm/3;
       background-color: $grey--light;
       border-radius: 1em;
+
+      .message--current & {
+        color: $white;
+        background-color: $green;
+      }
     }

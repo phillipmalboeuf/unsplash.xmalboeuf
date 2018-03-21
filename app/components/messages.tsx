@@ -1,21 +1,28 @@
 
 import * as React from "react"
 
+import { TextField } from "./textfield"
 
 interface MessageProps {
   _id?: string,
   body: string,
-  created_at?: string
+  username: string,
+  created_at?: string,
+  current?: boolean
 }
 
 interface Props {}
 interface State {
   sender_id: string,
-  messages: MessageProps[]
+  messages: MessageProps[],
+  username: string
 }
 
 export const Message: React.SFC<MessageProps> = (props) => {
-  return <li className="message"><span className="message__content">{props.body}</span></li>
+  return <li className={`message${props.current ? " message--current" : ""}`}>
+    {props.username && <div className="small_top"><small>{props.username.split("@")[0]}</small></div>}
+    <span className="message__content">{props.body}</span>
+  </li>
 }
 
 export default class Messages extends React.Component<Props, State> {
@@ -27,7 +34,8 @@ export default class Messages extends React.Component<Props, State> {
     super(props)
     this.state = {
       sender_id: undefined,
-      messages: []
+      messages: [],
+      username: localStorage.getItem("username") || undefined
     }
   }
 
@@ -52,24 +60,48 @@ export default class Messages extends React.Component<Props, State> {
     this.scrollToBottom()
   }
 
+  private submitUsername(e: React.FormEvent<HTMLFormElement>) : void {
+    e.preventDefault()
+    localStorage.setItem("username", e.currentTarget.username.value)
+    this.setState({username: e.currentTarget.username.value})
+  }
+
+  private resetUsername() : void {
+    localStorage.removeItem("username")
+    this.setState({username: undefined})
+  }
+
   private sendMessage(e: React.FormEvent<HTMLFormElement>) : void {
     e.preventDefault()
-    this.socket.send(e.currentTarget.body.value)
+    this.socket.send(JSON.stringify({body: e.currentTarget.body.value, username: this.state.username}))
   }
 
   private scrollToBottom() : void {
-    this.element.scrollTop = this.element.scrollHeight
+    if (this.element) {
+      this.element.scrollTop = this.element.scrollHeight
+    }
   }
 
   public render() {
-    return [
-      <ol ref={(element) => this.element = element} className="messages" key='messages'>
-        {this.state.messages.map(message => <Message key={message._id} body={message.body} />)}
-      </ol>,
-      <form key='form' onSubmit={(e)=> this.sendMessage(e)}>
-        <input type='text' name='body' placeholder="Say hi!" />
-        <button type="submit">Send</button>
-      </form>
-    ]
+    return this.state.username
+      ? [
+        <ol ref={(element) => this.element = element} className="messages" key='messages'>
+          {this.state.messages.map((message, index)=> <Message key={message._id} 
+            body={message.body}
+            username={index > 0 && this.state.messages[index-1].username != message.username ? message.username : undefined}
+            current={this.state.username === message.username} />)}
+        </ol>,
+        <form className="normal_bottom" key='form' onSubmit={(e)=> this.sendMessage(e)}>
+          <input type='text' name='body' placeholder="Say hi!" />
+          <button type="submit">Send</button>
+        </form>,
+        <button key="reset_username" className="button--transparent button--small" onClick={(e)=> this.resetUsername()}>Not {this.state.username}?</button>
+      ]
+      : <form onSubmit={(e)=> this.submitUsername(e)}>
+          <TextField name="username" label="Provide a username, just to identify yourself"
+            value={this.state.username}
+            placeholder="unsplashdev" />
+          <button type="submit">Save</button>
+        </form>
   }
 }

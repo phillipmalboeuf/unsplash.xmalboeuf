@@ -120,6 +120,7 @@ footer {
 .flat_bottom { margin-bottom: 0 !important; }
 .flat_bottom_on_phone { @media #{$phone} { margin-bottom: 0 !important; } }
 .flat_top { margin-top: 0 !important; }
+.small_top { margin-top: $vertical_rythm/2; }
 .normal_top { margin-top: $vertical_rythm; }
 .medium_top { margin-top: $vertical_rythm*2; }
 .overflow_top {margin-top: -$vertical_rythm*2; }
