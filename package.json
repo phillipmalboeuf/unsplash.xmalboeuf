@@ -2,6 +2,9 @@
   "name": "unplash.xmalboeuf",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "8.10.0"
+  },
   "scripts": {
     "start": "NODE_ENV=production node dist/index.js",
     "dev": "parcel index.html -p 8888",
