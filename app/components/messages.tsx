@@ -40,7 +40,7 @@ export default class Messages extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.socket = new WebSocket("ws://localhost:8666")
+    this.socket = new WebSocket("wss://messenger.unsplashxmalboeuf.net")
 
     this.socket.onmessage = (e)=> {
       let data = JSON.parse(e.data)
