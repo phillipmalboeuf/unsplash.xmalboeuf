@@ -9,7 +9,7 @@ interface Props {}
 
 export const Chat: React.SFC<Props> = (props) => {
   return <div className="hero">
-    <div className="hero__content">
+    <div className="hero__content" style={{width: "100%"}}>
       <Link className="underline" to="/demo">Back to demo</Link>
       <h1>Live Chat <span className="thin">w/ Phil</span></h1>
       {typeof window !== 'undefined' && <Messages />}
