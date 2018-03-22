@@ -29,7 +29,6 @@ export const Home: React.SFC<Props> = (props) => {
             <li><a href="https://wisemenscare.com/" target="_blank">wisemenscare.com</a></li>
             <li><a href="https://stdenis.co/" target="_blank">stdenis.co</a></li>
             <li><a href="https://www.hubstudio.co/" target="_blank">www.hubstudio.co</a></li>
-            <li><a href="http://www.danielaandrade.com/" target="_blank">www.danielaandrade.com</a></li>
           </ol>
           <p>Finally, I've made this thing this week, a small extension to your <a href="https://source.unsplash.com" className="underline" target="_blank">source.unsplash.com</a>:</p>
           <p><Button to="/demo" label="See Demo" /></p>
