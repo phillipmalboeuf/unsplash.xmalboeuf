@@ -15,6 +15,7 @@ interface Props {}
 interface State {
   sender_id: string,
   messages: MessageProps[],
+  body: string,
   username: string
 }
 
@@ -35,6 +36,7 @@ export default class Messages extends React.Component<Props, State> {
     this.state = {
       sender_id: undefined,
       messages: [],
+      body: "",
       username: localStorage.getItem("username") || undefined
     }
   }
@@ -74,6 +76,7 @@ export default class Messages extends React.Component<Props, State> {
   private sendMessage(e: React.FormEvent<HTMLFormElement>) : void {
     e.preventDefault()
     this.socket.send(JSON.stringify({body: e.currentTarget.body.value, username: this.state.username}))
+    this.setState({body: ""})
   }
 
   private scrollToBottom() : void {
@@ -95,8 +98,10 @@ export default class Messages extends React.Component<Props, State> {
         </div>,
         <form className="normal_bottom" key='form' onSubmit={(e)=> this.sendMessage(e)}>
           <TextField name="body" placeholder="Say hi!"
+            value={this.state.body}
             autoFocus={true}
-            autoComplete="off" />
+            autoComplete="off"
+            onChange={(e)=> this.setState({body: e.currentTarget.value})} />
           <button type="submit">Send</button>
         </form>,
         <button key="reset_username" className="button--transparent button--small" onClick={(e)=> this.resetUsername()}>Not {this.state.username}?</button>
