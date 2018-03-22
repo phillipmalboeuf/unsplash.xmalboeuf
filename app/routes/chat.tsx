@@ -12,7 +12,7 @@ export const Chat: React.SFC<Props> = (props) => {
     <div className="hero__content">
       <Link className="underline" to="/demo">Back to demo</Link>
       <h1>Live Chat <span className="thin">w/ Phil</span></h1>
-      {window && <Messages />}
+      {typeof window !== 'undefined' && <Messages />}
     </div>
     <div className="hero__topright">
       <a href="mailto:phil@boeuf.coffee" className="underline" target="_blank">phil@boeuf.coffee</a><br/>
