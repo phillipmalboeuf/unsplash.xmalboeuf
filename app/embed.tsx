@@ -83,7 +83,9 @@ export class Embed extends React.Component<Props, State> {
 declare global {
   interface Window {
     Embed: React.ComponentClass
+    embeds: {props: Props, element: HTMLElement}[]
   }
 }
 window.Embed = Embed
+window.embeds && window.embeds.forEach(embed => Embed.mount(embed.props, embed.element))
 

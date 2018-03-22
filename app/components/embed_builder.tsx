@@ -71,7 +71,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
       <div className="col col--10of12">
         <label htmlFor="script">Copy and paste this script anywhere on your site:</label>
         <textarea className="grey" onFocus={(e)=> e.currentTarget.select()} rows={3} id="script" readOnly
-          value={`<div id="embed_${this.state.photo_id}"></div><script>if(!window.Embed){var s=document.createElement('script');s.setAttribute("src", "https://unsplashxmalboeuf.com/dist/embed.js");document.body.appendChild(s)};Embed.mount(document.getElementById("embed_${this.state.photo_id}"),${JSON.stringify(this.state)});</script>`} />
+          value={`<div id="embed_${this.state.photo_id}"></div><script>if(!window.Embed){var s=document.createElement('script');s.setAttribute("src","https://unsplashxmalboeuf.net/dist/embed.js");s.setAttribute("defer","defer");document.body.appendChild(s)}if(!embeds){var embeds=[]}embeds.push({props:${JSON.stringify(this.state)},element:document.getElementById("embed_${this.state.photo_id}")})</script>`} />
       </div>
     </div>
   }
