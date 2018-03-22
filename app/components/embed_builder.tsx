@@ -16,6 +16,8 @@ interface State {
 
 export default class EmbedBuilder extends React.Component<Props, State> {
   private photo : HTMLImageElement
+  private embedElement : HTMLDivElement
+  private embed: Embed
 
   constructor(props: Props){
     super(props)
@@ -28,6 +30,10 @@ export default class EmbedBuilder extends React.Component<Props, State> {
       show_download_button: true
     }
   }
+
+  setPhotoId(e: React.ChangeEvent<HTMLInputElement>) : void {
+    this.setState({photo_id: e.currentTarget.value.replace("https://unsplash.com/photos/", "")})
+  }
   
   public render() {
     return <div className="grid grid--guttered">
@@ -35,10 +41,10 @@ export default class EmbedBuilder extends React.Component<Props, State> {
         <TextField name="photo_id" label="Enter the id or the url of an Unplash photo"
           value={this.state.photo_id}
           placeholder={`https://unsplash.com/photos/${this.state.photo_id}`}
-          onChange={(e)=> this.setState({photo_id: e.currentTarget.value.replace("https://unsplash.com/photos/", "")})} />
+          onChange={(e)=> this.setPhotoId(e)} />
       </div>
       <div className="col col--9of12">
-        {/*<Embed {...this.state} />*/}
+        {typeof window !== 'undefined' && <Embed {...this.state} />}
       </div>
       <div className="col col--3of12">
         <h6>Content</h6>

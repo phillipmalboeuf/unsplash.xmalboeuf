@@ -1,8 +1,8 @@
 
 import * as React from "react"
+import * as ReactDOM from "react-dom"
 
 interface Props {
-  target: HTMLImageElement,
   photo_id: string,
   show_exif?: boolean,
   show_description?: boolean,
@@ -14,7 +14,7 @@ interface State {
   photo: any | undefined
 }
 
-class Embed extends React.Component<Props, State> {
+export class Embed extends React.Component<Props, State> {
 
   constructor(props: Props){
     super(props)
@@ -27,8 +27,8 @@ class Embed extends React.Component<Props, State> {
     this.fetch()
   }
 
-  componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.photo_id !== this.props.photo_id) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    if (prevProps.photo_id !== this.props.photo_id) {
       this.fetch()
     }
   }
@@ -37,13 +37,12 @@ class Embed extends React.Component<Props, State> {
     fetch(`https://api.unsplash.com/photos/${this.props.photo_id}?client_id=50211084c14cf9eba6181e3514e20fee3f2f8fe9983636f309f40b90ab14598a`)
       .then(response => response.json())
       .then(json => {
-        console.log(json)
         this.setState({photo: json})
       })
   } 
 
   render() {
-    return this.state.photo
+    return this.state.photo && this.state.photo.urls
       ? <div style={{border: "1px solid #f1f1f1", borderRadius: "4px", boxShadow: "0 2px 4px #f1f1f1", overflow: "hidden"}}>
         <img src={this.state.photo.urls.regular} />
         <div style={{fontSize: "15px", color: "#111", padding: "20px"}}>
@@ -67,7 +66,7 @@ class Embed extends React.Component<Props, State> {
             </a>}
           </div>
           <p>
-            {this.props.show_location && <React.Fragment><small style={{fontSize: "12px"}}>{this.state.photo.location.title}</small><br/></React.Fragment>}
+            {this.props.show_location && this.state.photo.location && <React.Fragment><small style={{fontSize: "12px"}}>{this.state.photo.location.title}</small><br/></React.Fragment>}
             {this.props.show_description && <React.Fragment>{this.state.photo.description || "..."}<br/></React.Fragment>}
             {this.props.show_exif && <small style={{fontSize: "12px", color: "#999"}}>{this.state.photo.exif.model} {this.state.photo.exif.focal_length}mm f/{this.state.photo.exif.aperture} {this.state.photo.exif.exposure_time} {this.state.photo.exif.iso}ISO</small>}
           </p>
