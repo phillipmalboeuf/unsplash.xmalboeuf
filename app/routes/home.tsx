@@ -20,8 +20,9 @@ export const Home: React.SFC<Props> = (props) => {
           <p>Other techs<br/>{["Dokku", "MongoDB", "Imgix", "Algolia", "Stripe", "Shopify"].map((tag, index)=> <Tag key={index} label={tag} />)}</p>
         </div>
         <div className="col col--6of12">
-          <p>Second, here are some of my recent freelance projects:</p>
+          <p className="small_bottom">Second, here are some of my recent freelance projects:</p>
           <ol className="small">
+            <li><a href="https://fromrachel.myshopify.com" target="_blank">fromrachel.myshopify.com (Not yet released)</a></li>
             <li><a href="https://www.hotelsdauphin.ca/" target="_blank">www.hotelsdauphin.ca</a></li>
             <li><a href="https://aubergebishop.ca/" target="_blank">aubergebishop.ca</a></li>
             <li><a href="https://store.unsplash.com/" target="_blank">store.unsplash.com</a></li>
