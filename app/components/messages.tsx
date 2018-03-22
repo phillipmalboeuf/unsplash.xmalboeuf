@@ -85,12 +85,14 @@ export default class Messages extends React.Component<Props, State> {
   public render() {
     return this.state.username
       ? [
-        <ol ref={(element) => this.element = element} className="messages" key='messages'>
-          {this.state.messages.map((message, index)=> <Message key={message._id} 
-            body={message.body}
-            username={index > 0 && this.state.messages[index-1].username != message.username ? message.username : undefined}
-            current={this.state.username === message.username} />)}
-        </ol>,
+        <div className="messages_container" key="messages">
+          <ol ref={(element) => this.element = element} className="messages">
+            {this.state.messages.map((message, index)=> <Message key={message._id} 
+              body={message.body}
+              username={index > 0 && this.state.messages[index-1].username != message.username ? message.username : undefined}
+              current={this.state.username === message.username} />)}
+          </ol>
+        </div>,
         <form className="normal_bottom" key='form' onSubmit={(e)=> this.sendMessage(e)}>
           <TextField name="body" placeholder="Say hi!" autoComplete="off" />
           <button type="submit">Send</button>

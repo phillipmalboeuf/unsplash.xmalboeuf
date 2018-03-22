@@ -1,10 +1,29 @@
 
 
 // #MESSAGES
+
+.messages_container {
+  position: relative;
+
+  &:before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(180deg, $white 0%, fade-out($white, 1) 100%);
+  }
+}
+
 .messages {
   list-style: none;
+  display: block;
   padding: 0;
-  max-height: 50vh;
+  padding-top: $vertical_rythm*2;
+  max-height: 66vh;
   overflow: scroll;
 }
 
