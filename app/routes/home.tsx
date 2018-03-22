@@ -22,9 +22,8 @@ export const Home: React.SFC<Props> = (props) => {
         <div className="col col--6of12">
           <p className="small_bottom">Second, here are some of my recent freelance projects:</p>
           <ol className="small">
-            <li><a href="https://fromrachel.myshopify.com" target="_blank">fromrachel.myshopify.com (Not yet released)</a></li>
-            <li><a href="https://www.hotelsdauphin.ca/" target="_blank">www.hotelsdauphin.ca</a></li>
             <li><a href="https://aubergebishop.ca/" target="_blank">aubergebishop.ca</a></li>
+            <li><a href="https://www.hotelsdauphin.ca/" target="_blank">www.hotelsdauphin.ca</a></li>
             <li><a href="https://store.unsplash.com/" target="_blank">store.unsplash.com</a></li>
             <li><a href="https://juneswimwear.com/" target="_blank">juneswimwear.com</a></li>
             <li><a href="https://wisemenscare.com/" target="_blank">wisemenscare.com</a></li>
