@@ -33,6 +33,10 @@ export class Embed extends React.Component<Props, State> {
     }
   }
 
+  static mount(props: Props, element: HTMLElement): void {
+    ReactDOM.render(<Embed {...props} />, element)
+  }
+
   public fetch(): void {
     fetch(`https://api.unsplash.com/photos/${this.props.photo_id}?client_id=50211084c14cf9eba6181e3514e20fee3f2f8fe9983636f309f40b90ab14598a`)
       .then(response => response.json())

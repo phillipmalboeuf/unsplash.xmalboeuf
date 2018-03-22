@@ -24,7 +24,7 @@ export default class EmbedBuilder extends React.Component<Props, State> {
     this.state = { 
       photo_id: "AqY6268yL3o",
       show_exif: true,
-      show_description: true,
+      show_description: false,
       show_location: true,
       show_like_button: true,
       show_download_button: true
@@ -70,7 +70,8 @@ export default class EmbedBuilder extends React.Component<Props, State> {
       </div>
       <div className="col col--10of12">
         <label htmlFor="script">Copy and paste this script anywhere on your site:</label>
-        <textarea className="grey" onFocus={(e)=> e.currentTarget.select()} rows={3} id="script" readOnly value={`<script>if(!window.Embed){var s=document.createElement('script');s.setAttribute("src", "https://unsplashxmalboeuf.com/embed.js");document.body.appendChild(s)}</script><img onload="new Embed({target: e.currentTarget, photo_id: "${this.state.photo_id}"})" src="https://source.unsplash.com/${this.state.photo_id}"} />`} />
+        <textarea className="grey" onFocus={(e)=> e.currentTarget.select()} rows={3} id="script" readOnly
+          value={`<div id="embed_${this.state.photo_id}"></div><script>if(!window.Embed){var s=document.createElement('script');s.setAttribute("src", "https://unsplashxmalboeuf.com/dist/embed.js");document.body.appendChild(s)};Embed.mount(document.getElementById("embed_${this.state.photo_id}"),${JSON.stringify(this.state)});</script>`} />
       </div>
     </div>
   }
