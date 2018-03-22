@@ -92,7 +92,7 @@ export default class Messages extends React.Component<Props, State> {
             current={this.state.username === message.username} />)}
         </ol>,
         <form className="normal_bottom" key='form' onSubmit={(e)=> this.sendMessage(e)}>
-          <input type='text' name='body' placeholder="Say hi!" />
+          <TextField name="body" placeholder="Say hi!" autoComplete="off" />
           <button type="submit">Send</button>
         </form>,
         <button key="reset_username" className="button--transparent button--small" onClick={(e)=> this.resetUsername()}>Not {this.state.username}?</button>
