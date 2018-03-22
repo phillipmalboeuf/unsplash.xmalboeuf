@@ -10,16 +10,33 @@
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+
+  &.hero--home {
+    background-image: url("https://montrealuploads.imgix.net/unsplash.gif?auto=format,compress&frame=all");
+
+    @media #{$tablet_portrait} {
+      background-image: url("https://montrealuploads.imgix.net/unsplash.gif?auto=format,compress&w=888&h=888&&fit=crop&crop=bottom,right&frame=1");
+    }
+  }
 }
 
   .hero__content {
     @extend .padded;
     @extend .max_width;
     @extend .max_width--center;
+
+    @media #{$tablet_portrait} {
+      padding-top: $vertical_rythm*3;
+    }
   }
 
   .hero__topright {
     position: fixed;
     top: $vertical_rythm;
     right: $vertical_rythm;
+
+    @media #{$tablet_portrait} {
+      top: $vertical_rythm/4;
+      right: $vertical_rythm/4;
+    }
   }

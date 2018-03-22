@@ -5,9 +5,9 @@ html {
   font: #{$base_size}/#{$vertical_rythm * 0.88} $body_font;
   font-weight: $normal_weight;
 
-  @media #{$tablet_portrait} {
+  @media #{$phone} {
     font-size: 14px;
-    line-height: #{$vertical_rythm * 0.6}
+    line-height: #{$vertical_rythm * 0.66}
   }
 }
 

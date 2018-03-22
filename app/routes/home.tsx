@@ -6,7 +6,7 @@ import { Tag } from "../components/tag"
 interface Props {}
 
 export const Home: React.SFC<Props> = (props) => {
-  return <div className="hero black_back" style={{backgroundImage: "url(https://montrealuploads.imgix.net/unsplash.gif?auto=format,compress&frame=all)"}}>
+  return <div className="hero hero--home black_back">
     <div className="hero__content white">
       <h1>Unsplash <span className="thin">X Phillip Malboeuf</span></h1>
       <p>Hi Unsplash 🙀!<br/>I've set out to attempt to become your next full-stack developer. Your quest for a new dev stops here!</p>

@@ -43,10 +43,10 @@ export default class EmbedBuilder extends React.Component<Props, State> {
           placeholder={`https://unsplash.com/photos/${this.state.photo_id}`}
           onChange={(e)=> this.setPhotoId(e)} />
       </div>
-      <div className="col col--9of12">
+      <div className="col col--9of12 col--tablet_portrait--12of12">
         {typeof window !== 'undefined' && <Embed {...this.state} />}
       </div>
-      <div className="col col--3of12">
+      <div className="col col--3of12 col--tablet_portrait--12of12">
         <h6>Content</h6>
 
         <Checkbox name="show_description" label="Description" checked={this.state.show_description}
