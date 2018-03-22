@@ -24,7 +24,7 @@ export const Demo: React.SFC<Props> = (props) => {
         <div className="col col--6of12">
           <h4>Things to improve</h4>
           <ol>
-            <li>Preact instead of React for the Embed's render</li>
+            <li>Preact instead of React for rendering</li>
             <li>Use a non-rate-limited API call</li>
             <li>Finish the "like" button functionality</li>
             <li>Provide photo sizes parameters</li>
