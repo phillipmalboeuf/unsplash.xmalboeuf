@@ -12,6 +12,24 @@ export const Chat: React.SFC<Props> = (props) => {
     <div className="hero__content" style={{width: "100%"}}>
       <Link className="underline" to="/demo">Back to demo</Link>
       <h1>Live Chat <span className="thin">w/ Phil</span></h1>
+      <div className="grid grid--guttered">
+        <div className="col col--6of12">
+          <h4>Built with</h4>
+          <ol>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>WebSockets</li>
+            <li>MongoDB</li>
+          </ol>
+        </div>
+        <div className="col col--6of12">
+          <h4>Things to improve</h4>
+          <ol>
+            <li>Proper authentication</li>
+            <li>Audio/push notifications</li>
+          </ol>
+        </div>
+      </div>
       {typeof window !== 'undefined' && <Messages />}
     </div>
     <div className="hero__topright">
