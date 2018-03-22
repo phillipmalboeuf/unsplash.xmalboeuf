@@ -5,9 +5,10 @@ interface Props {
   label?: string,
   type?: string,
   name: string,
-  value: string | number,
+  value?: string | number,
   tight?: boolean,
-  placeholder: string,
+  placeholder?: string,
+  autoFocus?: boolean,
   autoComplete?: string,
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
@@ -19,6 +20,7 @@ export const TextField: React.SFC<Props> = (props) => {
       name={props.name} id={props.name}
       value={props.value}
       placeholder={props.placeholder}
+      autoFocus={props.autoFocus}
       autoComplete={props.autoComplete}
       onChange={props.onChange} />
   </React.Fragment>
